@@ -269,6 +269,19 @@ a.btn-primary:active {
     padding: 4rem 3rem;
 }
 
+/* Riduce lo spazio tra Quote / Come funziona e "Cos'è il COI Walking Game" */
+.section:has(+ #come-funziona) {
+    padding-bottom: 2rem;
+}
+
+#come-funziona {
+    padding-bottom: 2rem;
+}
+
+#come-funziona + .section {
+    padding-top: 2rem;
+}
+
 .section-alt {
     background: var(--gray-100);
 }
@@ -674,13 +687,51 @@ a.btn-primary:active {
     transform: scaleY(1);
 }
 
-.game-step-number {
+.game-step > span:not(.game-step-number),
+.game-step-heading > span:not(.game-step-marker) {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    margin-left: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.game-step-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.game-step-marker {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgb(80, 161, 80);
+    box-shadow: 0 4px 12px rgba(80, 161, 80, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-step:hover .game-step-marker {
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(80, 161, 80, 0.35);
+}
+
+.game-step-heading > span:not(.game-step-marker) {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.game-step .game-step-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 3rem;
     height: 3rem;
     margin-bottom: 1.25rem;
+    margin-left: 0;
     border-radius: 50%;
     background: var(--accent);
     color: white;
@@ -694,15 +745,6 @@ a.btn-primary:active {
 .game-step:hover .game-step-number {
     transform: scale(1.15);
     box-shadow: 0 6px 16px rgba(237, 111, 4, 0.4);
-}
-
-.game-step span {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    margin-left: 0.5rem;
-    color: var(--primary);
-    font-weight: 600;
 }
 
 .game-step p {
@@ -1473,6 +1515,15 @@ a.btn-primary:active {
         padding: 3rem 1.5rem;
     }
 
+    .section:has(+ #come-funziona),
+    #come-funziona {
+        padding-bottom: 1.5rem;
+    }
+
+    #come-funziona + .section {
+        padding-top: 1.5rem;
+    }
+
     .hero {
         padding: 2.5rem 1.5rem 1.5rem;
         margin-top: 80px;
@@ -1761,6 +1812,15 @@ a.btn-primary:active {
 
     .section {
         padding: 2.5rem 1.5rem;
+    }
+
+    .section:has(+ #come-funziona),
+    #come-funziona {
+        padding-bottom: 1.25rem;
+    }
+
+    #come-funziona + .section {
+        padding-top: 1.25rem;
     }
 }
 
