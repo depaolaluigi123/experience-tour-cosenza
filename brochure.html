@@ -517,6 +517,19 @@
             .fold-line { display: none; }
         }
     </style>
+    <script>
+        // Image path configuration - easily modify here to change image folder
+        const IMG_PATH = 'imgs/';
+
+        // Update all image paths
+        document.querySelectorAll('img[src]').forEach(img => {
+            const currentSrc = img.getAttribute('src');
+            if (!currentSrc.startsWith('http') && !currentSrc.startsWith('_imgs/')) {
+                img.src = IMG_PATH + currentSrc;
+            }
+        });
+    </script>
+
 </head>
 <body>
 
