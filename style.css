@@ -266,7 +266,7 @@ a.btn-primary:active {
 
 /* Section */
 .section {
-    padding: 4rem 3rem;
+    padding: 4rem 1.5rem;
 }
 
 /* Riduce lo spazio tra Quote / Come funziona e "Cos'è il COI Walking Game" */
@@ -322,7 +322,7 @@ a.btn-primary:active {
 .section-description {
     font-size: 1.2rem;
     color: var(--gray-700);
-    max-width: 700px;
+    max-width: 1200px;
     margin: 0 auto;
     line-height: 1.7;
 }
@@ -331,7 +331,7 @@ a.btn-primary:active {
 .quote-section {
     text-align: center;
     padding: 2rem 2.5rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     background: var(--gray-50);
     border-radius: 20px;
@@ -1019,7 +1019,7 @@ a.btn-primary:active {
 .cta-banner p {
     font-size: 1.2rem;
     opacity: 0.9;
-    max-width: 700px;
+    max-width: 1200px;
     margin: 0 auto 2rem;
 }
 
@@ -1227,7 +1227,7 @@ a.btn-primary:active {
 }
 
 .cta-final-note {
-    max-width: 720px;
+    max-width: 1200px;
     margin: 3rem auto 0;
     padding: 2.5rem 3rem;
     text-align: center;
@@ -1849,6 +1849,7 @@ a.btn-primary:active {
 .fade-in:nth-child(4) { transition-delay: 0.35s; }
 .fade-in:nth-child(5) { transition-delay: 0.45s; }
 .fade-in:nth-child(6) { transition-delay: 0.55s; }
+.fade-in:nth-child(7) { transition-delay: 0.65s; }
 
 /* Pulse Animation */
 @keyframes pulse {
