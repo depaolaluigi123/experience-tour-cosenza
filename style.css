@@ -648,6 +648,26 @@ a.btn-primary:active {
     margin-bottom: 0;
 }
 
+/* Walking Game showcase */
+.walking-game-showcase {
+    margin: 3rem auto 0;
+    max-width: 760px;
+    padding: 1.5rem 0.75rem;
+    
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.walking-game-showcase img {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
 /* Output Grid */
 .output-grid {
     display: grid;
@@ -1585,6 +1605,12 @@ a.btn-primary:active {
 
     .quote-section p {
         font-size: 1.4rem;
+    }
+
+    .walking-game-showcase {
+        margin-top: 2rem;
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
     }
 
     .output-grid {
