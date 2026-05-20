@@ -570,6 +570,70 @@ a.btn-primary:active {
     position: relative;
 }
 
+/* Role panel — unified visitor narrative */
+.role-panel {
+    margin-top: 4rem;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 3.5rem;
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--accent);
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.role-panel-lead {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+}
+
+.role-panel-body p {
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.role-panel-body p:last-child {
+    margin-bottom: 0;
+}
+
+.role-traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.role-trait {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.role-trait i {
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+.role-trait:hover {
+    border-color: var(--accent);
+    color: var(--primary);
+}
+
 
 /* Come si gioca — steps */
 .game-steps-grid {
@@ -1444,6 +1508,14 @@ a.btn-primary:active {
         padding: 2.5rem;
     }
 
+    .role-panel {
+        padding: 2.5rem 2rem;
+    }
+
+    .role-panel-lead {
+        font-size: 1.2rem;
+    }
+
     .card-icon {
         width: 70px;
         height: 70px;
@@ -1648,6 +1720,20 @@ a.btn-primary:active {
 
     .card {
         padding: 2rem;
+    }
+
+    .role-panel {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .role-panel-lead {
+        font-size: 1.1rem;
+    }
+
+    .role-traits {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
     }
 
     .output-grid {
