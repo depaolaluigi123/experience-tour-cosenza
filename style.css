@@ -290,6 +290,15 @@ a.btn-primary:active {
     background: var(--gray-100);
 }
 
+#cosa-si-vince {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+#cosa-si-vince .section-header {
+    margin-bottom: 0;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -942,6 +951,27 @@ a.btn-primary:active {
 }
 
 /* Program */
+#programma .section-header {
+    margin-bottom: 1.5rem;
+}
+
+#programma .program-container {
+    margin-top: 1.5rem;
+}
+
+#programma {
+    padding-bottom: 2.5rem;
+}
+
+#partecipa {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#chi-siamo {
+    padding-top: 1.35rem;
+}
+
 .program-container {
     max-width: 900px;
     margin: 4rem auto 0;
@@ -1710,6 +1740,24 @@ button:focus-visible {
         padding-top: 1.5rem;
     }
 
+    #cosa-si-vince {
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    #programma {
+        padding-bottom: 2rem;
+    }
+
+    #partecipa {
+        padding-top: 1.5rem;
+        padding-bottom: 1.75rem;
+    }
+
+    #chi-siamo {
+        padding-top: 1.15rem;
+    }
+
     .hero {
         padding: 2.5rem 1.5rem 1.5rem;
         margin-top: 80px;
@@ -1918,13 +1966,7 @@ button:focus-visible {
     .walking-game-intro-box {
         padding: 2rem 1.5rem;
         border-radius: 20px;
-        margin-bottom: 2.5rem;
-    }
-
-    .walking-game-showcase {
-        /* padding: 1.5rem 1rem; */
-        border-radius: 20px;
-        margin-bottom: var(--spazio-immagine-testo);
+        margin-bottom: 1rem;
     }
 
     .walking-game-intro {
@@ -1938,11 +1980,22 @@ button:focus-visible {
         row-gap: 0;
     }
 
+    .walking-game-showcase {
+        /* padding: 1.5rem 1rem; */
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        /* padding: 1rem 0.5rem; */
+    }
+
     .walking-game-intro-title,
     .walking-game-intro-description {
         text-align: center;
         align-self: center;
         width: 100%;
+    }
+
+    .walking-game-intro-description {
+        margin-bottom: 0;
     }
 
     .output-grid {
@@ -2031,6 +2084,24 @@ button:focus-visible {
 
     #come-funziona + .section {
         padding-top: 1.25rem;
+    }
+
+    #cosa-si-vince {
+        padding-top: 1.25rem;
+        padding-bottom: 1.75rem;
+    }
+
+    #programma {
+        padding-bottom: 1.75rem;
+    }
+
+    #partecipa {
+        padding-top: 1.3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #chi-siamo {
+        padding-top: 1.15rem;
     }
 }
 
