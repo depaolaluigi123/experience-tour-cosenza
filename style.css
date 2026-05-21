@@ -266,7 +266,11 @@ a.btn-primary:active {
 
 /* Section */
 .section {
-    padding: 4rem 1.5rem;
+    padding: 4rem 150px;
+}
+
+.section .container {
+    max-width: 1600px;
 }
 
 /* Riduce lo spazio tra Quote / Come funziona e "Cos'è il COI Walking Game" */
@@ -322,7 +326,8 @@ a.btn-primary:active {
 .section-description {
     font-size: 1.2rem;
     color: var(--gray-700);
-    max-width: 1200px;
+    /* max-width: none;
+    width: 100%; */
     margin: 0 auto;
     line-height: 1.7;
 }
@@ -331,7 +336,8 @@ a.btn-primary:active {
 .quote-section {
     text-align: center;
     padding: 2rem 2.5rem;
-    max-width: 1200px;
+    /* max-width: none;
+    width: 100%; */
     margin: 0 auto;
     background: var(--gray-50);
     border-radius: 20px;
@@ -649,9 +655,13 @@ a.btn-primary:active {
 /* Come si gioca — steps */
 .game-steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
+}
+
+.game-steps-grid .game-step:last-child {
+    grid-column: 1 / -1;
 }
 
 .game-step {
@@ -753,24 +763,104 @@ a.btn-primary:active {
     margin-bottom: 0;
 }
 
-/* Walking Game showcase */
+/* Walking Game intro — box con max-width (immagine + testo) */
+.walking-game-intro-box {
+    container-type: inline-size;
+    /* max-width: 1200px; */
+    /* margin: 0 auto 3.5rem;
+    padding: 3rem 3.5rem; */
+    background: white;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* border-radius: 24px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06); */
+}
+
+.walking-game-intro {
+    --walking-game-image-max: 600px;
+    --spazio-immagine-testo: 5rem; /* spazio immagine → descrizione (layout impilato) */
+    /* --spazio-titolo-immagine: calc(var(--spazio-immagine-testo) - 24px); titolo → immagine, più stretto */
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "image title"
+        "image desc";
+    column-gap: var(--spazio-immagine-testo);
+    row-gap: 1.25rem;
+    align-items: center;
+    justify-items: start;
+}
+
+.walking-game-intro-title {
+    grid-area: title;
+    margin: 0;
+    text-align: left;
+    align-self: end;
+}
+
+.walking-game-intro-description {
+    grid-area: desc;
+    margin: 0;
+    text-align: left;
+    align-self: start;
+}
+
 .walking-game-showcase {
-    margin: 3rem auto 0;
-    max-width: 760px;
+    grid-area: image;
+    margin: 0;
+    width: min(100%, var(--walking-game-image-max));
+    max-width: var(--walking-game-image-max);
     padding: 1.5rem 0.75rem;
-    
     border-radius: 24px;
     text-align: center;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
     overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
 }
 
 .walking-game-showcase img {
     display: block;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin: 0;
+    object-fit: contain;
+}
+
+/* Layout impilato (zoom alto / box stretto): titolo → immagine → descrizione */
+@container (max-width: 75rem) {
+    .walking-game-intro {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "title"
+            "image"
+            "desc";
+        justify-items: center;
+        row-gap: 0;
+    }
+
+    .walking-game-intro-title {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        align-self: center;
+        width: 100%;
+    }
+
+    .walking-game-intro-description {
+        text-align: center;
+        align-self: center;
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .walking-game-showcase {
+        width: min(100%, var(--walking-game-image-max));
+        margin-bottom: 3rem;
+    }
 }
 
 /* Output Grid */
@@ -778,7 +868,7 @@ a.btn-primary:active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 0;
 }
 
 .output-grid .output-item {
@@ -1019,7 +1109,8 @@ a.btn-primary:active {
 .cta-banner p {
     font-size: 1.2rem;
     opacity: 0.9;
-    max-width: 1200px;
+    /* max-width: none;
+    width: 100%; */
     margin: 0 auto 2rem;
 }
 
@@ -1144,12 +1235,6 @@ a.btn-primary:active {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 1024px) {
-    .startup-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* CTA Cards */
 .cta-cards {
     display: grid;
@@ -1227,7 +1312,8 @@ a.btn-primary:active {
 }
 
 .cta-final-note {
-    max-width: 1200px;
+    /* max-width: none;
+    width: 100%; */
     margin: 3rem auto 0;
     padding: 2.5rem 3rem;
     text-align: center;
@@ -1263,12 +1349,6 @@ a.btn-primary:active {
     color: var(--gray-700);
     line-height: 1.7;
     margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    .cta-cards {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Footer */
@@ -1486,7 +1566,98 @@ a.btn-primary:active {
     margin-top: 0;
 }
 
+
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-card.fade-in.visible:hover {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+/* Staggered Animation */
+.fade-in:nth-child(1) { transition-delay: 0.05s; }
+.fade-in:nth-child(2) { transition-delay: 0.15s; }
+.fade-in:nth-child(3) { transition-delay: 0.25s; }
+.fade-in:nth-child(4) { transition-delay: 0.35s; }
+.fade-in:nth-child(5) { transition-delay: 0.45s; }
+.fade-in:nth-child(6) { transition-delay: 0.55s; }
+.fade-in:nth-child(7) { transition-delay: 0.65s; }
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.float-hover:hover {
+    animation: float 0.6s ease-in-out;
+}
+
+/* Scroll Reveal Animation */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+        will-change: opacity, transform;
+    }
+}
+
+/* Smooth Transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--accent);
+    color: white;
+}
+
+@media (max-width: 1300px) {
+    .game-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 1024px) {
+    .startup-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1494,6 +1665,21 @@ a.btn-primary:active {
 
     .footer-main {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 960px) {
+    .game-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .game-steps-grid .game-step:last-child {
+        grid-column: auto;
+    }
+
+    .game-step {
+        padding: 2rem;
     }
 }
 
@@ -1729,10 +1915,34 @@ a.btn-primary:active {
         font-size: 1.1rem;
     }
 
-    .walking-game-showcase {
-        margin-top: 2rem;
-        padding: 1.5rem 1rem;
+    .walking-game-intro-box {
+        padding: 2rem 1.5rem;
         border-radius: 20px;
+        margin-bottom: 2.5rem;
+    }
+
+    .walking-game-showcase {
+        /* padding: 1.5rem 1rem; */
+        border-radius: 20px;
+        margin-bottom: var(--spazio-immagine-testo);
+    }
+
+    .walking-game-intro {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "title"
+            "image"
+            "desc";
+        justify-items: center;
+        row-gap: 0;
+    }
+
+    .walking-game-intro-title,
+    .walking-game-intro-description {
+        text-align: center;
+        align-self: center;
+        width: 100%;
     }
 
     .output-grid {
@@ -1749,13 +1959,13 @@ a.btn-primary:active {
         font-size: 2rem;
     }
 
-    .game-steps-grid {
+    .cta-cards {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
-
-    .game-step {
-        padding: 2rem;
+    
+    .program-links {
+        max-width: 100%;
+        align-items: stretch;
     }
 }
 
@@ -1823,91 +2033,4 @@ a.btn-primary:active {
         padding-top: 1.25rem;
     }
 }
-
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cta-card.fade-in.visible:hover {
-    opacity: 1;
-    transform: translateY(-10px);
-}
-
-/* Staggered Animation */
-.fade-in:nth-child(1) { transition-delay: 0.05s; }
-.fade-in:nth-child(2) { transition-delay: 0.15s; }
-.fade-in:nth-child(3) { transition-delay: 0.25s; }
-.fade-in:nth-child(4) { transition-delay: 0.35s; }
-.fade-in:nth-child(5) { transition-delay: 0.45s; }
-.fade-in:nth-child(6) { transition-delay: 0.55s; }
-.fade-in:nth-child(7) { transition-delay: 0.65s; }
-
-/* Pulse Animation */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-/* Float Animation */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-.float-hover:hover {
-    animation: float 0.6s ease-in-out;
-}
-
-/* Scroll Reveal Animation */
-@media (prefers-reduced-motion: no-preference) {
-    .fade-in {
-        will-change: opacity, transform;
-    }
-}
-
-/* Smooth Transitions */
-* {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Focus States for Accessibility */
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-}
-
-/* Selection Color */
-::selection {
-    background: var(--accent);
-    color: white;
-}
-
-::-moz-selection {
-    background: var(--accent);
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .program-links {
-        max-width: 100%;
-        align-items: stretch;
-    }
-}
-
 
