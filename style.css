@@ -1550,6 +1550,25 @@ a.btn-primary:active {
     transform: scale(1.05);
 }
 
+.partner-logos-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.partner-logos-row img {
+    height: 40px;
+    max-width: 300px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
 .footer-logos {
     display: flex;
     align-items: center;
@@ -1895,8 +1914,12 @@ button:focus-visible {
         max-width: 160px;
     }
 
-    .partner-logos-section img {
-        max-width: 100% !important;
+    .partner-logos-row {
+        gap: 3rem;
+    }
+
+    .partner-logos-row img {
+        max-width: 160px;
     }
 
     .cta-card {
